@@ -1,10 +1,11 @@
-export default function ready(fn){
+export default function ready(...r){
 	if (document.readyState != 'loading'){
-		fn();
+		r();
 	} else {
-		document.addEventListener('DOMContentLoaded', fn);
+		document.addEventListener('DOMContentLoaded', r);
 	}
 };
+
 
 
 
