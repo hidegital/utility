@@ -9,22 +9,32 @@ var _templete = require('./lodashtojs/templete');
 
 var _templete2 = _interopRequireDefault(_templete);
 
+var _settimeout = require('./promise/settimeout');
+
+var _settimeout2 = _interopRequireDefault(_settimeout);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _ready2.default)((0, _templete2.default)('hogehoge'));
+(0, _ready2.default)((0, _templete2.default)('hogehoge'), (0, _settimeout2.default)(1500).then(function () {
+	console.log('timeout');
+}));
 
-},{"./jquerytojs/ready":2,"./lodashtojs/templete":3}],2:[function(require,module,exports){
+},{"./jquerytojs/ready":2,"./lodashtojs/templete":3,"./promise/settimeout":4}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 exports.default = ready;
-function ready(fn) {
+function ready() {
+	for (var _len = arguments.length, r = Array(_len), _key = 0; _key < _len; _key++) {
+		r[_key] = arguments[_key];
+	}
+
 	if (document.readyState != 'loading') {
-		fn();
+		r();
 	} else {
-		document.addEventListener('DOMContentLoaded', fn);
+		document.addEventListener('DOMContentLoaded', r);
 	}
 };
 
@@ -53,6 +63,34 @@ function simple(name) {
 	};
 	var user = { "name": name };
 	tempTarget.innerHTML = compiled(user);
+}
+
+},{}],4:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = setTimeOut;
+//export default function setTimeOut(delay){
+//	var defer_time = $.Deferred();
+//	setTimeout(function() {
+//		defer_time.resolve();
+//	}, delay);
+//	return defer_time.promise();
+//}
+//todo es6 promise
+//
+
+function setTimeOut(delay) {
+	//var defer_time = $.Deferred();
+	//setTimeout(function() {
+	//	defer_time.resolve();
+	//}, delay);
+	//return defer_time.promise();
+	return new Promise(function (resolve, reject) {
+		setTimeout(resolve, delay);
+	});
 }
 
 },{}]},{},[1]);
