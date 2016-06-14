@@ -16,4 +16,4 @@ var ua = (function (u) {
     }
 })(window.navigator.userAgent.toLowerCase());
 
-module.exports = ua
+export default ua;
