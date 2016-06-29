@@ -13,6 +13,9 @@ export default class ScrollFunc {
 		this.loadTargetPos = loadTargetPos;
 		this.loadWrapperPos = loadWrapperPos;
 	}
+	init(loadWrapperPos){
+		this.loadWrapperPos = loadWrapperPos;
+	}
 	setState(threshold) {
 		var state;
 		if(threshold > this.loadTargetPos && threshold < this.loadWrapperPos){
