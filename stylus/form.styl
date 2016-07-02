@@ -1,0 +1,15 @@
+//form系よく使うstyle
+
+//radio
+.form--contact__radio
+	display none
+	& + label
+		&:before
+			content ''
+			display inline-block
+			margin-right: 5px
+			@extend .c-icon--radio
+	&:checked
+		& + label
+			&:before
+				@extend .c-icon--radio--on
