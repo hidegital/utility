@@ -1,0 +1,19 @@
+//gulp spriteを使用時
+@import "sprite/sprite";
+
+//pc
+sprite($sprite)
+	background url(../img/sprite/sprite.png) no-repeat $sprite[2] $sprite[3]
+	width $sprite[4]
+	height $sprite[5]
+
+
+//sponly ratio2対応
+sprite($sprite)
+	background url(../img/sprite/sprite.png) no-repeat round($sprite[2]/2) round($sprite[3]/2)
+	width round($sprite[4]/2)
+	height round($sprite[5]/2)
+	background-size round($spritesheet_width/2) round($spritesheet_height/2)
+
+$icon
+	display inline-block
