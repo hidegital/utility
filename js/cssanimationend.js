@@ -1,7 +1,7 @@
 //cssアニメーション終了告知
 
 //csstransition
-$target.on('"oTransitionEnd mozTransitionEnd webkitTransitionEnd transitionend"',function(){
+$target.on('oTransitionEnd mozTransitionEnd webkitTransitionEnd transitionend',function(){
     //処理
 });
 
